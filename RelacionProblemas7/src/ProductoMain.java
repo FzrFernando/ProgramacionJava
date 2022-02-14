@@ -14,6 +14,7 @@ public class ProductoMain {
 		System.out.println(p2);
 		p2.setPrecio(0.9);
 		System.out.println(p2.calcularPrecioConIva());
+		
 	}
 
 }
