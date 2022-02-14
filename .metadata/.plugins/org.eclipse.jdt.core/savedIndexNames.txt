@@ -1,0 +1,22 @@
+INDEX VERSION 1.131+/home/estudiante/java/.metadata/.plugins/org.eclipse.jdt.core
+3845527975.index
+2118501199.index
+2367873471.index
+1213112868.index
+221208700.index
+4286349126.index
+1539013383.index
+60671920.index
+1833233005.index
+731432391.index
+1865797976.index
+2212027959.index
+2969683937.index
+917813159.index
+1523719962.index
+3194640975.index
+4127588240.index
+2027665858.index
+4108063679.index
+54190926.index
+2431545982.index
