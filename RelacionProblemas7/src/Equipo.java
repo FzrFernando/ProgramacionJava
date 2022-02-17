@@ -5,6 +5,7 @@ public class Equipo {
 	private String nombre;
 	private String ciudad;
 	private String estadio;
+	private int partidosGanados= 0;
 	
 	
 	public Equipo(String nombre, String ciudad, String estadio) {
@@ -62,6 +63,16 @@ public class Equipo {
 
 	public String getNombre() {
 		return nombre;
+	}
+
+
+	public int getPartidosGanados() {
+		return partidosGanados;
+	}
+
+
+	public void setPartidosGanados(int partidosGanados) {
+		this.partidosGanados ++;
 	}
 	
 	
