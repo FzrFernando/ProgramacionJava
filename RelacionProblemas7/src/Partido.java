@@ -34,5 +34,19 @@ public class Partido {
 		return resultado;
 	}
 	
-	
+	public void ponerResultado(String resultado) throws PartidoException{
+		int pos = resultado.indexOf('-');
+		if (pos == -1) {
+			throw new PartidoException("Error en el formato");
+		}
+		try {
+			int golesLocal = Integer.parseInt(resultado.substring(0,pos));
+			int golesVisitante = Integer.parseInt(resultado.substring(pos,1));
+			this.golesLocal = golesLocal;
+			this.golesVisitantes = golesVisitante;
+			this.jugado = true;
+		} catch (Exception e) {
+			throw new PartidoException("Error en el formato");
+		}
+	}
 }
