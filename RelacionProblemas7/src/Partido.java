@@ -33,4 +33,6 @@ public class Partido {
 			resultado = "2";
 		return resultado;
 	}
+	
+	
 }
