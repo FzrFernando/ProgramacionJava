@@ -49,4 +49,36 @@ public class Partido {
 			throw new PartidoException("Error en el formato");
 		}
 	}
+
+	public int getGolesLocal() {
+		return golesLocal;
+	}
+
+	public void setGolesLocal(int golesLocal) {
+		this.golesLocal = golesLocal;
+	}
+
+	public int getGolesVisitantes() {
+		return golesVisitantes;
+	}
+
+	public void setGolesVisitantes(int golesVisitantes) {
+		this.golesVisitantes = golesVisitantes;
+	}
+
+	public int getJornada() {
+		return jornada;
+	}
+
+	public Equipo getLocal() {
+		Equipo local = new Equipo(this.local.getNombre(), this.local.getCiudad(),this.local.getEstadio());
+		return local;
+	}
+
+	public Equipo getVisitante() {
+		Equipo visitante = new Equipo(this.visitante.getNombre(), this.visitante.getCiudad(),this.visitante.getEstadio());
+		return visitante;
+	}
+	
+	
 }
