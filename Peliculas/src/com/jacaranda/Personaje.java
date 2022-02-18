@@ -57,7 +57,10 @@ public class Personaje {
 		return especie;
 	}
 
-	public void setPoder(int poder) {
+	public void setPoder(int poder) throws PersonajeException {
+		if (poder < 1 || poder > 100) {
+			throw new PersonajeException ("Error en el poder");
+		}
 		this.poder = poder;
 	}
 
