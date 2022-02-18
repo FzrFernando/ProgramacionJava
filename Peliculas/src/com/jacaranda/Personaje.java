@@ -57,6 +57,10 @@ public class Personaje {
 		return especie;
 	}
 
+	public void setPoder(int poder) {
+		this.poder = poder;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(nombre);
@@ -76,8 +80,17 @@ public class Personaje {
 
 	@Override
 	public String toString() {
-		return "Personaje [nombre=" + nombre + ", poder=" + poder + ", primeraPelicula=" + primeraPelicula
-				+ ", estatura=" + estatura + ", peso=" + peso + ", especie=" + especie + "]";
+		String cadenafinal="";
+		if ((double) this.poder > this.peso) {
+			cadenafinal = "nombre = " + nombre + ", estatura =" + estatura + ", especie =" + especie + ", poder =" + poder + ", peso =" + peso;
+		}
+		else if((double) this.poder < this.peso) {
+			cadenafinal = "nombre = " + nombre + ", estatura =" + estatura + ", especie =" + especie + ", peso =" + peso + ", poder =" + poder ;
+		}
+		else {
+			cadenafinal = "nombre = " + nombre + ", estatura =" + estatura + ", especie =" + especie + ", poder =" + poder + ", peso =" + peso;
+		}
+		return cadenafinal;
 	}
 	
 	
