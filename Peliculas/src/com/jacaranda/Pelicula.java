@@ -1,11 +1,25 @@
 package com.jacaranda;
 
+/**
+ * 
+ * @author Fernando
+ *
+ *
+ */
+
 public class Pelicula {
 
 	private String nombre;
 	private int estreno;
 	private Personaje personajes[] = new Personaje[3];
 	
+	
+	/**
+	 * 
+	 * @param nombre
+	 * @param estreno
+	 * @param personajes
+	 */
 	public Pelicula(String nombre, int estreno, Personaje personajes[]) {
 		super();
 		this.nombre = nombre;
