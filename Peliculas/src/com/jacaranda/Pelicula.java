@@ -21,9 +21,15 @@ public class Pelicula {
 		return estreno;
 	}
 	
+	public Personaje[] getPersonajes() {
+		return personajes;
+	}
+
 	public boolean masNueva(Pelicula pelicula) {
 		boolean nueva = false;
-		
+		if (this.estreno < pelicula.estreno) {
+			nueva = true;
+		}
 		return nueva;
 	}
 }
