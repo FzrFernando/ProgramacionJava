@@ -16,9 +16,9 @@ public class Pelicula {
 	
 	/**
 	 * 
-	 * @param nombre
-	 * @param estreno
-	 * @param personajes
+	 * @param nombre nombre de la pelicula
+	 * @param estreno fecha(en integer) del estreno
+	 * @param personajes array de personajes
 	 */
 	public Pelicula(String nombre, int estreno, Personaje personajes[]) {
 		super();

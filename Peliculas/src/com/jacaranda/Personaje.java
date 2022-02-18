@@ -59,8 +59,8 @@ public class Personaje {
 
 	/**
 	 * 
-	 * @param poder
-	 * @throws PersonajeException
+	 * @param poder poder que tendrá la película
+	 * @throws PersonajeException si hubiese poder menor que 1 o mayor que 100
 	 */
 	public void setPoder(int poder) throws PersonajeException {
 		if (poder < 1 || poder > 100) {
