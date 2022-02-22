@@ -1,9 +1,14 @@
 package com.vinos;
 
+import java.util.Objects;
+
 public class Vino {
 
-	private String nombre;
-	private double graduacion;
+	/**
+	 * Aquí se mostrarán los atributos de la clase
+	 */
+	private String nombre; //String con el nombre que tendrá el vino
+	private double graduacion; //Double con la graduacion del vino
 	
 	public Vino(String nombre) {
 		super();
@@ -26,6 +31,28 @@ public class Vino {
 
 	public double getGraduacion() {
 		return graduacion;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vino other = (Vino) obj;
+		return Objects.equals(nombre, other.nombre);
+	}
+
+	@Override
+	public String toString() {
+		return "Vino [nombre=" + nombre + ", graduacion=" + graduacion + "]";
 	}
 	
 	
