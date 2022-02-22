@@ -107,6 +107,10 @@ public class Plato {
 		return "Plato [nombre=" + nombre + ", precio=" + precio + ", getPrecioVentaPublico()=" + getPrecioVentaPublico()
 				+ ", getVino()=" + getVino() + ", getGradosVinosRecomendado()=" + getGradosVinosRecomendado() + "]";
 	}
+
+	public static double getIva() {
+		return IVA;
+	}
 	
 	
 }
