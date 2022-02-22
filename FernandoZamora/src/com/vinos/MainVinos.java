@@ -1,7 +1,11 @@
 package com.vinos;
 
+import java.util.Scanner;
+
 public class MainVinos {
 
+	public static Scanner teclado = new Scanner (System.in);
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -15,6 +19,8 @@ public class MainVinos {
 							"5. Mostrar información de todos los platos" + "\n" +
 							"6. Salir");
 		
+		int opc;
+		opc = Integer.parseInt(teclado.nextLine());
 		
 		
 		
