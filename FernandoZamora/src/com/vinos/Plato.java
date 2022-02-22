@@ -23,8 +23,8 @@ public class Plato {
 		try {
 			setPrecio(precio);
 		} catch (PlatoException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			// TODO Auto-generated catch block 
+			e.printStackTrace(); //Aquí recogeremos el mensaje de la Exception
 		}
 	}
 
@@ -48,7 +48,7 @@ public class Plato {
 
 	public void setPrecio(double precio) throws PlatoException{
 		if (precio <= 0) {
-			throw new PlatoException("El precio debe ser mayor");
+			throw new PlatoException("El precio debe ser mayor"); //Tiene una exception porque el preciobase debe ser mayor que 0
 		}else {
 			this.precio = precio;
 		}
@@ -104,8 +104,15 @@ public class Plato {
 
 	@Override
 	public String toString() {
-		return "Plato [nombre=" + nombre + ", precio=" + precio + ", getPrecioVentaPublico()=" + getPrecioVentaPublico()
-				+ ", getVino()=" + getVino() + ", getGradosVinosRecomendado()=" + getGradosVinosRecomendado() + "]";
+		String cadenaToString;
+		if (this.vino == null) {
+			cadenaToString = "Plato [nombre=" + nombre + ", precio=" + precio + ", getPrecioVentaPublico()=" + getPrecioVentaPublico() + "]";
+		}
+		else {
+			cadenaToString = "Plato [nombre=" + nombre + ", precio=" + precio + ", getPrecioVentaPublico()=" + getPrecioVentaPublico()
+			+ ", getVino()=" + getVino() + ", getGradosVinosRecomendado()=" + getGradosVinosRecomendado() + "]";
+		}
+		return cadenaToString;
 	}
 
 	public static double getIva() {
