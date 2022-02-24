@@ -40,7 +40,7 @@ public class Baraja {
 	
 	private int generarNumero() {
 		int numero;
-		numero = claseRandom.nextInt(10-1);
+		numero = 1 + claseRandom.nextInt(10-1);
 		return numero;
 	}
 }
