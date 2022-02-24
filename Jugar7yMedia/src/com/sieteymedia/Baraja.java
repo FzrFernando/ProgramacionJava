@@ -14,4 +14,14 @@ public class Baraja {
 	public void barajar() {
 		
 	}
+
+	public int getSiguiente() {
+		return siguiente;
+	}
+	
+	private String generarPalo() {
+		String palo="";
+		
+		return palo;
+	}
 }
