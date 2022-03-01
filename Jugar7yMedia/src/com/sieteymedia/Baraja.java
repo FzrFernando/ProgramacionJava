@@ -1,4 +1,5 @@
 package com.sieteymedia;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Baraja {
@@ -10,14 +11,32 @@ public class Baraja {
 	public Baraja() {
 		super();
 		this.cartas = new Carta[NUMCARTAS];
+		this.siguiente = 0;
 	}
 	
-	public void barajar() {
+	public void barajar() throws CartaException {
+		this.cartas = new Carta[NUMCARTAS];
 		
+		int i = 0;
+		while (i < NUMCARTAS) {
+			Carta c = new Carta(generarNumero(), generarPalo());
+			boolean encontrado = false;
+			for (int j = 0; j < i && !false; j++) {
+				if (cartas[j].equals(c)) {
+					encontrado = true;
+				}
+			}
+			if (!encontrado) {
+				cartas[i] = c;
+				i++;
+			}
+		}
 	}
 
-	public int getSiguiente() {
-		return siguiente;
+	public Carta getSiguiente() throws CartaException {
+		Carta resultado = new Carta(cartas[siguiente].getNumber(),cartas[siguiente].getPalo());
+		siguiente++;
+		return resultado;
 	}
 	
 	private String generarPalo() {
@@ -43,4 +62,15 @@ public class Baraja {
 		numero = 1 + claseRandom.nextInt(10-1);
 		return numero;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado = new StringBuilder();
+		for (int i = 0; i < NUMCARTAS; i++) {
+			resultado.append(cartas[i].toString() + "\n");
+		}
+		return resultado.toString();
+	}
+	
+	
 }
