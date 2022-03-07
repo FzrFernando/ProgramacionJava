@@ -96,4 +96,5 @@ public class Nota {
 				+ ", fechaUltimaModificacion=" + fechaUltimaModificacion + "]";
 	}
 	
+	
 }
