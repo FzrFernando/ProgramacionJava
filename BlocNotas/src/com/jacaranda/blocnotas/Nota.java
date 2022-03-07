@@ -1,6 +1,7 @@
 package com.jacaranda.blocnotas;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Nota {
 
@@ -54,4 +55,45 @@ public class Nota {
 		}
 		return vacio;
 	}
+	
+	public boolean isCreadoAnterior(Nota n1) {
+		boolean creadoAnterior = false;
+		if (this.fechaCreacion.isBefore(n1.fechaCreacion)) {
+			creadoAnterior = true;
+		}
+		return creadoAnterior;
+	}
+	
+	public boolean isModificadoAnterior(Nota n1) {
+		boolean modificadoAnterior = false;
+		if (this.fechaUltimaModificacion.isBefore(n1.fechaUltimaModificacion)) {
+			modificadoAnterior = true;
+		}
+		return modificadoAnterior;
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(fechaCreacion, texto);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Nota other = (Nota) obj;
+		return Objects.equals(fechaCreacion, other.fechaCreacion) && Objects.equals(texto, other.texto);
+	}
+
+	@Override
+	public String toString() {
+		return "Nota [codigo=" + codigo + ", texto=" + texto + ", fechaCreacion=" + fechaCreacion
+				+ ", fechaUltimaModificacion=" + fechaUltimaModificacion + "]";
+	}
+	
 }
