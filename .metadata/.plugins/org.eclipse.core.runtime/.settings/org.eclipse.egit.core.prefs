@@ -1,4 +1,5 @@
-GitRepositoriesView.GitDirectories=/home/estudiante/java/Primeros_ejercicios_Java/.git\:/home/estudiante/java/.git\:/home/estudiante/git/ProgramacionJava/.git\:/home/estudiante/git/Programacion/.git\:
-GitRepositoriesView.GitDirectories.relative=Primeros_ejercicios_Java/.git\:.git\:/home/estudiante/git/ProgramacionJava/.git\:/home/estudiante/git/Programacion/.git\:
+GitRepositoriesView.GitDirectories=/home/estudiante/java/Primeros_ejercicios_Java/.git\:/home/estudiante/java/.git\:
+GitRepositoriesView.GitDirectories.relative=Primeros_ejercicios_Java/.git\:.git\:
+RepositoryGroups.uuids=
 RepositorySearchDialogSearchPath=/home/estudiante/java
 eclipse.preferences.version=1
