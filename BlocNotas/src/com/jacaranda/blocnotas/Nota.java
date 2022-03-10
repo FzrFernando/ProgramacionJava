@@ -3,7 +3,7 @@ package com.jacaranda.blocnotas;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Nota {
+public class Nota implements Comparable <Nota>{
 
 	private static int codigoSiguiente;
 	private int codigo;
@@ -95,5 +95,17 @@ public class Nota {
 		return "Nota [codigo=" + codigo + ", texto=" + texto + ", fechaCreacion=" + fechaCreacion
 				+ ", fechaUltimaModificacion=" + fechaUltimaModificacion + "]";
 	}
+
+	@Override
+	public int compareTo(Nota o) {
+		// TODO Auto-generated method stub
+		int resultado;
+		resultado = this.texto.compareToIgnoreCase(o.getTexto());
+		if (resultado == 0) {
+			resultado = this.fechaCreacion.compareTo(o.fechaCreacion);
+		}
+		return resultado;
+	}
+	
 	
 }
