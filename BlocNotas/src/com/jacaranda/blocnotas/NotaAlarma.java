@@ -8,4 +8,6 @@ public class NotaAlarma {
 	private static final int MINUTOSREPETIRPORDEFECTO = 5;
 	private int minutosRepetir;
 	private boolean activado;
+	
+	
 }
