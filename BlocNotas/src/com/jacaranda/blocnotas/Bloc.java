@@ -2,7 +2,7 @@ package com.jacaranda.blocnotas;
 
 import java.util.Objects;
 
-public class Bloc {
+public class Bloc extends BlocException {
 
 	private static final int NUMERONOTASMAXIMA=3;
 	private int numNotas;

@@ -3,7 +3,7 @@ package com.jacaranda.blocnotas;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Nota implements Comparable <Nota>{
+public class Nota extends NotaAlarmaException implements Comparable <Nota>{
 
 	private static int codigoSiguiente;
 	private int codigo;
