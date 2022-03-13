@@ -7,11 +7,13 @@ public class Bloc {
 	private static final int NUMERONOTASMAXIMA=3;
 	private int numNotas;
 	private String nombre;
+	private Nota[] nota;
 	
 	public Bloc(String nombre) throws BlocException{
 		super();
 		this.nombre = nombre;
-		this.numNotas = NUMERONOTASMAXIMA;
+		this.numNotas = 0;
+		this.nota = new Nota[NUMERONOTASMAXIMA];
 	}
 
 	public static int getNumeronotasmaxima() {
