@@ -16,6 +16,14 @@ public class Bloc extends BlocException {
 		this.nota = new Nota[NUMERONOTASMAXIMA];
 	}
 
+	public Nota[] getNota() {
+		return nota;
+	}
+
+	public void updateNota(int pos, String texto) {
+		nota[pos].setTexto(texto);
+	}
+	
 	public static int getNumeronotasmaxima() {
 		return NUMERONOTASMAXIMA;
 	}
