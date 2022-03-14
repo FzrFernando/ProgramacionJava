@@ -60,4 +60,23 @@ public class NotaAlarma extends Nota implements Activable{
 				+ activado + "]";
 	}
 
+	@Override
+	public NotaAlarma clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		NotaAlarma nueva = null;
+		try {
+			nueva = new NotaAlarma(this.getTexto(), this.fechaAlarma, this.activado);
+			nueva.minutosRepetir = this.minutosRepetir;
+			nueva.setCodigo(this.getCodigo());
+			nueva.setFechaCreacion(this.getFechaCreacion());
+			nueva.setFechaUltimaModificacion(this.getFechaModificacion());
+		} catch (NotaAlarmaException e) {
+			// TODO Auto-generated catch block
+			throw new CloneNotSupportedException("Imposible clonar");
+		}
+		return nueva;
+		
+	}
+
+	
 }

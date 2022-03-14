@@ -108,5 +108,29 @@ public class Nota extends NotaAlarmaException implements Comparable <Nota>{
 		}
 		return resultado;
 	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		Nota nueva = new Nota(this.texto);
+		nueva.codigo = this.codigo;
+		nueva.fechaCreacion = this.fechaCreacion;
+		nueva.fechaUltimaModificacion = this.fechaUltimaModificacion;
+		return nueva;
+	}
+
+	protected void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	protected void setFechaCreacion(LocalDateTime fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	protected void setFechaUltimaModificacion(LocalDateTime fechaUltimaModificacion) {
+		this.fechaUltimaModificacion = fechaUltimaModificacion;
+	}
+	
+	
 	
 }
