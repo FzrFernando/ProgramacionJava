@@ -1,8 +1,10 @@
 package com.jacaranda.bloc;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 import com.jacaranda.nota.Nota;
+import com.jacaranda.nota.NotaAlarma;
 
 public class Bloc extends BlocException {
 
@@ -18,12 +20,38 @@ public class Bloc extends BlocException {
 		this.nota = new Nota[NUMERONOTASMAXIMA];
 	}
 
-	public Nota[] getNota() {
-		return nota;
+	private void compruebaExisteNota(int pos) throws Exception{
+		if (pos >= this.numNotas) {
+			throw new Exception("Error");
+		}
+	}
+	
+	public String getNota(int numNotas) {
+		return nota[numNotas].getTexto();
 	}
 
 	public void updateNota(int pos, String texto) {
 		nota[pos].setTexto(texto);
+	}
+	
+	public void activa(int pos) throws Exception {
+		compruebaExisteNota(pos);
+		if (nota[pos] instanceof NotaAlarma) {
+			((NotaAlarma) nota[pos]).activar();
+		}
+		else {
+			throw new BlocException();
+		}		
+	}
+	
+	public void desactiva(int pos) throws Exception {
+		compruebaExisteNota(pos);
+		if (nota[pos] instanceof NotaAlarma) {
+			((NotaAlarma) nota[pos]).desactivar();
+		}
+		else {
+			throw new BlocException();
+		}		
 	}
 	
 	public static int getNumeronotasmaxima() {
@@ -56,5 +84,12 @@ public class Bloc extends BlocException {
 		return "Bloc [numNotas=" + numNotas + ", nombre=" + nombre + "]";
 	}
 	
-	
+	public String ordenaBloc() {
+		Nota[] blocOrdenado = new Nota [numNotas];
+		for (int i = 0; i < this.numNotas;i++) {
+			//blocOrdenado[i] = this.nota[i].clone();
+		}
+		Arrays.sort(blocOrdenado);
+		return blocOrdenado.toString();
+	}
 }

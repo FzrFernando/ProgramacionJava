@@ -42,36 +42,33 @@ public class Nota extends NotaAlarmaException implements Comparable <Nota>{
 	
 	public boolean isModificado() {
 		boolean modificado = false;
-		if (this.fechaUltimaModificacion.isAfter(fechaCreacion)) {
+		if (this.fechaUltimaModificacion == null) {
 			modificado = true;
+		}
+		else {
+			modificado = this.fechaCreacion.equals(this.fechaUltimaModificacion);
 		}
 		return modificado;
 	}
 	
 	public boolean isEmpty() {
-		boolean vacio = false;
-		if (this.texto.equals("")) {
-			vacio = true;  
-		}
-		return vacio;
+		return this.texto.isEmpty();
 	}
 	
-	public boolean isCreadoAnterior(Nota n1) {
-		boolean creadoAnterior = false;
-		if (this.fechaCreacion.isBefore(n1.fechaCreacion) && n1!=null) {
-			creadoAnterior = true;
+	public boolean isCreadoAnterior(Nota n1) throws NotaAlarmaException {
+		if (n1 == null) {
+			throw new NotaAlarmaException("Error");
 		}
-		return creadoAnterior;
+		 return this.fechaCreacion.isBefore(n1.fechaCreacion);
+		
 	}
 	
-	public boolean isModificadoAnterior(Nota n1) {
-		boolean modificadoAnterior = false;
-		if (this.fechaUltimaModificacion.isBefore(n1.fechaUltimaModificacion) && n1!=null) {
-			modificadoAnterior = true;
+	public boolean isModificadoAnterior(Nota n1) throws NotaAlarmaException {
+		if (n1 == null) {
+			throw new NotaAlarmaException("Error");
 		}
-		return modificadoAnterior;
+		 return this.fechaUltimaModificacion.isBefore(n1.fechaUltimaModificacion);
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -100,12 +97,16 @@ public class Nota extends NotaAlarmaException implements Comparable <Nota>{
 	public int compareTo(Nota o) {
 		// TODO Auto-generated method stub
 		int resultado;
-		resultado = this.texto.compareToIgnoreCase(o.getTexto());
-		if (resultado == 0) {
-			resultado = this.fechaCreacion.compareTo(o.fechaCreacion);
+		if (o == null) {
+			resultado = -1;
+		}
+		else{
+			resultado = this.texto.compareTo(o.texto);
+			if (resultado == 0) {
+				resultado = this.getFechaCreacion().compareTo(o.getFechaCreacion());
+			}
 		}
 		return resultado;
 	}
-	
 	
 }
