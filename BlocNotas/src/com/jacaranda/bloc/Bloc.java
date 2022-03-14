@@ -1,6 +1,8 @@
-package com.jacaranda.blocnotas;
+package com.jacaranda.bloc;
 
 import java.util.Objects;
+
+import com.jacaranda.nota.Nota;
 
 public class Bloc extends BlocException {
 

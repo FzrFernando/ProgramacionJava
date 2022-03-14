@@ -1,6 +1,6 @@
-package com.jacaranda.blocnotas;
+package com.jacaranda.main;
 
-public class MainBlocNotas {
+public class BlocNotasMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -1,4 +1,4 @@
-package com.jacaranda.blocnotas;
+package com.jacaranda.bloc;
 
 public class BlocException extends Exception{
 
