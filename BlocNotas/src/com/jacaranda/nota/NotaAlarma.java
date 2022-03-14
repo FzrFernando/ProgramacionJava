@@ -8,28 +8,56 @@ public class NotaAlarma extends Nota implements Activable{
 	private static final int MINUTOSREPETIRPORDEFECTO = 5;
 	private int minutosRepetir;
 	private boolean activado;
-	
-	
-	public NotaAlarma(String texto) {
+
+
+	public NotaAlarma(String texto, LocalDateTime fechaAlarma, boolean activado) throws NotaAlarmaException {
 		super(texto);
-		// TODO Auto-generated constructor stub
-		this.fechaAlarma = LocalDateTime.now();
-		this.activado = false;
+		setFechaAlarma(fechaAlarma);
+		this.activado = activado;
+		this.minutosRepetir = NotaAlarma.MINUTOSREPETIRPORDEFECTO;
 	}
 
+	public NotaAlarma(String texto, LocalDateTime fechaAlarma, int minutosRepetir) throws NotaAlarmaException {
+		super(texto);
+		setFechaAlarma(fechaAlarma);
+		this.minutosRepetir = minutosRepetir;
+		this.activado = true;
+	}
+
+	private void setFechaAlarma(LocalDateTime fechaAlarma) throws NotaAlarmaException {
+		if(fechaAlarma == null) {
+			throw new NotaAlarmaException("Error");
+		}
+		if (fechaAlarma.isBefore(this.getFechaCreacion())) {
+			throw new NotaAlarmaException("Error");
+		}
+		this.fechaAlarma = fechaAlarma;
+	}
+	
+	public static int getMINUTOSREPETIRPORDEFECTO() {
+		return MINUTOSREPETIRPORDEFECTO;
+	}
 
 	@Override
 	public void activar() {
 		// TODO Auto-generated method stub
-		
+		this.activado = true;
 	}
-
 
 	@Override
 	public void desactivar() {
 		// TODO Auto-generated method stub
-		
+		this.activado = false;
 	}
 	
-	
+	public boolean isActivado() {
+		return activado;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "NotaAlarma [fechaAlarma=" + fechaAlarma + ", minutosRepetir=" + minutosRepetir + ", activado="
+				+ activado + "]";
+	}
+
 }
