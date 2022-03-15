@@ -130,7 +130,11 @@ public class Bloc extends BlocException {
 
 	@Override
 	public String toString() {
-		return "Bloc [numNotas=" + numNotas + ", nombre=" + nombre + "]";
+		StringBuilder result = new StringBuilder("Nombre del bloc" + nombre + "\n");
+		for (int i=0; i<numNotas; i++) {
+			result.append(nota[i].toString()+"\n");
+		}
+		return result.toString();
 	}
 	
 	public String ordenaBloc() throws CloneNotSupportedException {
