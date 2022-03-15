@@ -78,8 +78,11 @@ public class Bloc extends BlocException {
 		numNotas--;
 	}
 
-	public void updateNota(int pos, String texto) {
-		nota[pos].setTexto(texto);
+	public void updateNota(int pos, String texto) throws BlocException {
+		if (numNotas > this.numNotas || numNotas < 0) {
+			throw new BlocException("Nota no existente");
+		}
+		nota[numNotas].setTexto(texto);
 	}
 	
 	public void activa(int pos) throws Exception {
