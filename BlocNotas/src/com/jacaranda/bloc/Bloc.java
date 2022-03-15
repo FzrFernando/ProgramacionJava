@@ -94,10 +94,10 @@ public class Bloc extends BlocException {
 		return "Bloc [numNotas=" + numNotas + ", nombre=" + nombre + "]";
 	}
 	
-	public String ordenaBloc() {
+	public String ordenaBloc() throws CloneNotSupportedException {
 		Nota[] blocOrdenado = new Nota [numNotas];
 		for (int i = 0; i < this.numNotas;i++) {
-			//blocOrdenado[i] = this.nota[i].clone();
+			blocOrdenado[i] = (Nota) this.nota[i].clone();
 		}
 		Arrays.sort(blocOrdenado);
 		return blocOrdenado.toString();
