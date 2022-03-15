@@ -29,6 +29,16 @@ public class Bloc extends BlocException {
 	public String getNota(int numNotas) {
 		return nota[numNotas].getTexto();
 	}
+	
+	public void borrarNota(int posicion) throws BlocException {
+		if (posicion >= numNotas) {
+			throw new BlocException("Error");
+		}
+		for (int i = posicion; i < numNotas-1; i++) {
+			nota[i] = nota[i+1];
+		}
+		numNotas--;
+	}
 
 	public void updateNota(int pos, String texto) {
 		nota[pos].setTexto(texto);
