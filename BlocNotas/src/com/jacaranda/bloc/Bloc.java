@@ -137,12 +137,16 @@ public class Bloc extends BlocException {
 		return result.toString();
 	}
 	
-	public String ordenaBloc() throws CloneNotSupportedException {
+	public String ordenaBloc() {
 		Nota[] blocOrdenado = new Nota [numNotas];
+		StringBuilder result = new StringBuilder("Array ordenado");
 		for (int i = 0; i < this.numNotas;i++) {
-			blocOrdenado[i] = (Nota) this.nota[i].clone();
+			blocOrdenado[i] = nota[i];
 		}
 		Arrays.sort(blocOrdenado);
-		return blocOrdenado.toString();
+		for (int i = 0; i < this.numNotas;i++) {
+			result.append(blocOrdenado[i]);
+		}
+		return result.toString();
 	}
 }
