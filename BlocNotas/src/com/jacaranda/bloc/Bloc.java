@@ -21,12 +21,6 @@ public class Bloc extends BlocException {
 		this.numNotas = 0;
 		this.nota = new Nota[NUMERONOTASMAXIMA];
 	}
-
-	private void compruebaExisteNota(int pos) throws Exception{
-		if (pos >= this.numNotas) {
-			throw new Exception("Error");
-		}
-	}
 	
 	public void addNota(String texto) throws BlocException {
 		if (numNotas == NUMERONOTASMAXIMA) {
@@ -86,26 +80,30 @@ public class Bloc extends BlocException {
 	}
 	
 	public void activa(int pos) throws Exception {
-		compruebaExisteNota(pos);
+		if (numNotas > this.numNotas || numNotas < 0) {
+			throw new BlocException("Nota no existente");
+		}
 		if (nota[pos] instanceof NotaAlarma) {
 			((NotaAlarma) nota[pos]).activar();
 		}
 		else {
-			throw new BlocException();
+			throw new BlocException("Imposible activar nota");
 		}		
 	}
 	
 	public void desactiva(int pos) throws Exception {
-		compruebaExisteNota(pos);
+		if (numNotas > this.numNotas || numNotas < 0) {
+			throw new BlocException("Nota no existente");
+		}
 		if (nota[pos] instanceof NotaAlarma) {
 			((NotaAlarma) nota[pos]).desactivar();
 		}
 		else {
-			throw new BlocException();
+			throw new BlocException("Imposible desactivar nota");
 		}		
 	}
 	
-	public static int getNumeronotasmaxima() {
+	public static int getNumeroNotasMaxima() {
 		return NUMERONOTASMAXIMA;
 	}
 
