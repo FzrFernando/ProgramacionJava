@@ -23,13 +23,13 @@ public class Main {
 		Utilidades.volcarArray(array1Int, array2Int);
 		
 		
-		System.out.println("Array string origen " + Arrays.toString(origen));
+		System.out.println("Array string origen " + Utilidades.toString(origen));
 		
-		System.out.println("Array sting destino " + Arrays.toString(destino));
+		System.out.println("Array sting destino " + Utilidades.toString(destino));
 		
-		System.out.println("Array Integer origen " + Arrays.toString(array1Int));
+		System.out.println("Array Integer origen " + Utilidades.toString(array1Int));
 		
-		System.out.println("Array Integer destino " + Arrays.toString(array2Int));
+		System.out.println("Array Integer destino " + Utilidades.toString(array2Int));
 	}
 
 }
