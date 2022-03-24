@@ -26,5 +26,7 @@ public class Equipo {
 		return "Equipo [nombre=" + nombre + ", listado=" + listado + "]";
 	}
 	
-	
+	public int numAlumnos() {
+		return this.listado.size();
+	}
 }
