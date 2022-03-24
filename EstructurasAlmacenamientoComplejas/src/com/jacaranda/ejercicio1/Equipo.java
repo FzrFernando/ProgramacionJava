@@ -20,4 +20,11 @@ public class Equipo {
 		}
 		listado.add(alumno);
 	}
+
+	@Override
+	public String toString() {
+		return "Equipo [nombre=" + nombre + ", listado=" + listado + "]";
+	}
+	
+	
 }
