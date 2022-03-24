@@ -33,6 +33,17 @@ public class Equipo {
 		}
 	}
 	
+	public Alumno contenerAlumno(Alumno alumno) throws EquipoException {
+		Alumno aux = null;
+		if (alumno == null) {
+			throw new EquipoException("Es nulo");
+		}
+		if (listado.contains(alumno) == true) {
+			aux = alumno;
+		}
+		return aux;
+	}
+	
 	@Override
 	public String toString() {
 		return "Equipo [nombre=" + nombre + ", listado=" + listado + "]";
