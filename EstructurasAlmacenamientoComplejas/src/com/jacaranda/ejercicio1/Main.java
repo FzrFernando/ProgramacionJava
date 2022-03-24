@@ -19,6 +19,8 @@ public class Main {
 			System.out.println(e);*/
 			System.out.println(e.contenerAlumno(a));
 			System.out.println("Contiene alumno");
+			System.out.println(e.contenerAlumno(b));
+			System.out.println("No lo contiene");
 		} catch (EquipoException e1) {
 			System.out.println(e1.getMessage());
 		}
