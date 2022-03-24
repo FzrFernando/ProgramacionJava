@@ -15,8 +15,8 @@ public class Equipo {
 	}
 	
 	public void addAlumno(Alumno alumno) throws EquipoException {
-		if (listado.contains(alumno)) {
-			throw new EquipoException("Alumno ya existente");
+		if (listado.contains(alumno) || alumno == null) {
+			throw new EquipoException("Alumno ya existente o nulo");
 		}
 		listado.add(alumno);
 	}
