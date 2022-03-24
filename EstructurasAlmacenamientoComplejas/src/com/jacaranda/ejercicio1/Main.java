@@ -12,6 +12,7 @@ public class Main {
 		try {
 			e.addAlumno(a);
 			System.out.println("Alumno Añadido");
+			System.out.println(e);
 		} catch (EquipoException e1) {
 			System.out.println(e1.getMessage());
 		}
