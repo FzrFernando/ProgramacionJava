@@ -27,6 +27,12 @@ public class Equipo {
 		}
 	}
 
+	public void borrarAlumno(Alumno alumno) throws EquipoException {
+		if (!listado.remove(alumno) || alumno == null) {
+			throw new EquipoException("No se ha encontrado el alumno o nulo");
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Equipo [nombre=" + nombre + ", listado=" + listado + "]";

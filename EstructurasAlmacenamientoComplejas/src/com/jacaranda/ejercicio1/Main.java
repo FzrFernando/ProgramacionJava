@@ -13,6 +13,9 @@ public class Main {
 			e.addAlumno(a);
 			System.out.println("Alumno Añadido");
 			System.out.println(e);
+			e.borrarAlumno(a);
+			System.out.println("Alumno Borrado");
+			System.out.println(e);
 		} catch (EquipoException e1) {
 			System.out.println(e1.getMessage());
 		}
