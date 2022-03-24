@@ -20,6 +20,12 @@ public class Equipo {
 		}
 		listado.add(alumno);
 	}
+	
+	public void addAlumno2(Alumno alumno) throws EquipoException {
+		if (!listado.add(alumno) || alumno == null) {
+			throw new EquipoException("Alumno ya existente o nulo");
+		}
+	}
 
 	@Override
 	public String toString() {
