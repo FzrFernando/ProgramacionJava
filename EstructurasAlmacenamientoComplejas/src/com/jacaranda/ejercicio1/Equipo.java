@@ -45,15 +45,21 @@ public class Equipo {
 		return aux;
 	}
 
-	public void delAlumno(String nombre) {
+	private boolean delUnAlumno(String nombre) {
 		Iterator<Alumno> siguiente = this.listado.iterator();
+		boolean encontrado = false;
 		while (siguiente.hasNext()) {
 			Alumno a = siguiente.next();
 			if (a.getNombre().equalsIgnoreCase(nombre)) {
-				this.listado.remove(a);
+				this.listado.remove(siguiente.next());
+				encontrado = true;
 			}
 		}
-
+		return encontrado;
+	}
+	
+	public void delAlumno(String nombre) {
+		while (delUnAlumno(nombre) == true);
 	}
 
 	@Override
@@ -65,12 +71,38 @@ public class Equipo {
 		return this.listado.size();
 	}
 
-//	public Equipo unionEquipo(Equipo e2) {
-//		Equipo resultado = new Equipo("");
-//		for (Alumno a: this.listado) {
-//			if (e2.listado.contains(a)) {
-//				
-//			}
-//		}
-//	}
+	public Equipo unionEquipo(Equipo e2) {
+		Equipo resultado = new Equipo("Calavera");
+		for (Alumno a: this.listado) {
+			try {
+				resultado.addAlumno2(a);
+			} catch (EquipoException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(Alumno a : e2.listado) {
+			try {
+				resultado.addAlumno2(a);
+			} catch (EquipoException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return resultado;
+	}
+	
+	public Equipo interseccionEquipo(Equipo e2) {
+		Equipo resultado =  new Equipo("Triana");
+		for (Alumno a: this.listado) {
+			if(e2.listado.contains(a)) {
+				try {
+					resultado.addAlumno2(a);
+				} catch (EquipoException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return resultado;
+	}
 }
